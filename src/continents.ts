@@ -1,3 +1,13 @@
+import { faker } from '@faker-js/faker'
+
+export interface City {
+  id: string
+  name: string
+  image: string
+  countryFlagImage: string
+  country: string
+}
+
 export interface Continent {
   id: string
   title: string
@@ -7,6 +17,7 @@ export interface Continent {
   countries: number
   idioms: number
   bestCities: number
+  cities: City[]
 }
 
 export const continents: Continent[] = [
@@ -20,6 +31,13 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 27,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
   {
     id: 'southamerica',
@@ -31,6 +49,13 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 10,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
   {
     id: 'asia',
@@ -42,6 +67,13 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 30,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
   {
     id: 'africa',
@@ -53,6 +85,13 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 23,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
   {
     id: 'europe',
@@ -64,6 +103,13 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 5,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
   {
     id: 'oceania',
@@ -75,5 +121,12 @@ export const continents: Continent[] = [
     countries: 50,
     idioms: 60,
     bestCities: 5,
+    cities: new Array(10).fill('').map((_) => ({
+      id: faker.datatype.uuid(),
+      name: faker.address.cityName(),
+      image: faker.image.city(undefined, undefined, true),
+      countryFlagImage: faker.image.abstract(),
+      country: faker.address.country(),
+    })),
   },
 ]
